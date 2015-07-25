@@ -1,0 +1,102 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;
+    padding-right: 15px;*/ 
+}
+
+.homepage {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url("http://www.hdwallpaperscool.com/wp-content/uploads/2015/05/restaurant-hd-wallpaper-for-desktop-background-download-restaurant-images.jpg");
+    position:absolute;
+    left:0px;
+    right:0px;
+    height: 100%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.homepage-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.jumbotron {
+    background-color: transparent;
+    color: white;
+}
+
+.col-md-3 {
+    color: white;
+    padding-left: 80px;
+}
+
+.btn-primary,
+.btn-default {
+    background-color: #5fcf34;
+    border-color: #5fcf34;
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-default:hover,
+.btn-primary:focus,
+.btn-default:focus,
+.btn-primary:active,
+.btn-default:active,
+.btn-primary.active,
+.btn-dwefault.active,
+.open .dropdown-toggle.btn-primary {
+    background-color: #5fcf34;
+    border-color: #5fcf34;
+}
+
+.footer {
+    color: white;
+    text-align: center;
+}
+
+.fontcolor {
+
+}
+
+.menuitems {
+    display: none;
+    padding-top: 5px;
+
+}
+
+.dishname {
+    padding-top: 5px;
+}
+
+.dishcomponents {
+    padding-top: 5px;
+}
+
+.dishdescription {
+    padding-top: 5px;
+}
+
+.componentlist {
+    display: none;
+}

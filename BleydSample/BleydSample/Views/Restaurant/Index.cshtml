@@ -1,0 +1,124 @@
+﻿@using BleydSample.Models
+@model IEnumerable<MenuItem>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        function addcomponents(selector) {
+            $('#component').empty();
+            $('#repeatcheckbox').hide();
+            for (var i = 0; i < selector.value; i++) {
+                $('#component').append("<input type='text'/> <br />");
+            }
+            if ($('#component').is(':empty')) {
+                $('#repeatcheckbox').hide();
+            } else {
+                $('#repeatcheckbox').show();
+            }
+            $('#component').show();
+            
+            
+        }
+
+        function repeatcheckboxchecked(selector) {
+            if (selector.checked) {
+                $('#listofdays').show();
+            } else {
+                $('#listofdays').hide();
+            }
+        }
+        
+        $('#repeatcheckbox').hide();
+        $('#listofdays').hide();
+    </script>
+}
+
+@if (Model.Count() <= 0)
+{
+    @Html.Label("AddMenuLabel", "Lets add some menu items", new { @class = "text-success" });
+    <button type="button" class="btn btn-default btn-number" onclick="$('#items').toggle();">
+        <span class="glyphicon glyphicon-plus"></span>
+    </button>
+}
+<div id="items" class="menuitems">
+    <div id="name" class="dishname">
+        <label>Dish Name: </label>
+        <input type="text" />
+    </div>
+    <div id="description" class="dishdescription">
+        <label>Description: </label>
+        <input type="text" />
+    </div>
+    <div id="numberofcomponents" class="dishcomponents">
+        <label>Seperable Components: </label>
+        <select id="componentslistbox" name="numberofcomponents" size="1" onclick="addcomponents(this)">
+            <option value="0" selected="selected">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+</div>
+<div id="component" class="componentlist">
+
+</div>
+
+<div class="container" id="dishavailability">
+    <div class="row" id="repeatcheckbox">
+        <input type="checkbox" name="checkboxforrepeat" id="checkbox-repeat" onchange="repeatcheckboxchecked(this)" />
+        <label for="checkboxes">Repeat</label>
+    </div>
+    <div class="row" id="listofdays">
+        <label class="col-md-12 control-label" for="checkboxes">Day(s) of  Week</label>
+        <div id="daycheckboxes" class="row">
+            <div class="form-group">
+                <label class="col-md-1 checkbox-inline" for="checkboxes-0">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    Su
+                </label>
+                <label class="col-md-1 checkbox-inline" for="checkboxes-1">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                    Mo
+                </label>
+                <label class="col-md-1 checkbox-inline" for="checkboxes-2">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
+                    Tu
+                </label>
+                <label class="col-md-1 checkbox-inline" for="checkboxes-3">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
+                    We
+                </label>
+                <label class="col-md-1 checkbox-inline" for="checkboxes-4">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-4" value="5">
+                    Th
+                </label>
+                <label class="col-md-1 checkbox-inline" for="checkboxes-5">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-5" value="6">
+                    Fr
+                </label>
+                <label class="col-md-1 checkbox-inline" for="checkboxes-6">
+                    <input type="checkbox" name="checkboxes" id="checkboxes-6" value="7">
+                    Sa
+                </label>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
